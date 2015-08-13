@@ -1,6 +1,7 @@
 __author__ = 'alexandre'
 import socket
 
+
 print("creating socket")
 s = socket.socket()
 print("done")
