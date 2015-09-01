@@ -1,15 +1,18 @@
 __author__ = 'alexandre'
+import time
 import serial
-connected = False;
-ser = serial.Serial('COM4', 9600, timeout=0)
+import RPi.GPIO as gpio
+ledPins = [2, 3, 4, 17]
 
-while not connected:
-    serin = ser.read()
-    connected = True
-ser.readl
-ser.write(b'1')
-r = ser.read()
-ser.close()
+ser = serial.Serial ('/dev/ttyUSB0', 9600)
+ser.write('t')
+
+resposta = ser.readline()
+print 'distancia: %s' % resposta
+
+
+def changeLed (idx):
+    gpio.output(ledPins[idx], True)
 
 
 
